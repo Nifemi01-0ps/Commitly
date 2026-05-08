@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+@import "tailwindcss";
+
+/* ─── Design tokens ────────────────────────────────────────────────────────── */
+:root {
+  --brand:      #4F46E5;
+  --brand-soft: #EEF2FF;
+  --brand-dark: #3730A3;
+  --bg:         #F8F9FB;
+  --card:       #FFFFFF;
+  --text:       #1C1917;
+  --muted:      #78716C;
+  --border:     rgba(0,0,0,0.08);
+  --green:      #16A34A;
+  --green-soft: #DCFCE7;
+  --amber:      #D97706;
+  --amber-soft: #FEF3C7;
+  --red:        #DC2626;
+  --red-soft:   #FEE2E2;
+  --blue-soft:  #DBEAFE;
+  --blue:       #2563EB;
+  --radius:     16px;
+  --radius-sm:  10px;
+  --shadow:     0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-lg:  0 4px 6px rgba(0,0,0,0.04), 0 10px 32px rgba(79,70,229,0.14);
+}
+
+/* ─── Reset ────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { height: 100%; }
+
+body {
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  background: var(--bg) !important;   /* override any Tailwind dark mode */
+  color: var(--text) !important;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+}
+
+/* ─── Scrollbar ────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 4px; }
+
+/* ─── Shared keyframes (referenced by multiple components) ─────────────────── */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .55; transform: scale(1.35); }
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounceIn {
+  0%   { transform: scale(.35); opacity: 0; }
+  65%  { transform: scale(1.12); }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes confettiFall {
+  0%   { transform: translateY(-10px) rotate(0deg);   opacity: 1; }
+  100% { transform: translateY(60px)  rotate(720deg); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-8px) scale(.96); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);   }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Utility classes ──────────────────────────────────────────────────────── */
+.font-display { font-family: 'Bricolage Grotesque', sans-serif; }
+
+/* Tap highlight removal for mobile */
+button, a { -webkit-tap-highlight-color: transparent; }
+
+/* Smooth press feel for interactive elements */
+button:active { transform: scale(0.97); }
