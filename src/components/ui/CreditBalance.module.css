@@ -1,0 +1,82 @@
+/* Compact */
+.compact {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+/* Full */
+.full {
+  display: inline-block;
+}
+
+.fullAmount {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.fullLabel {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--brand-soft);
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  border-radius: 20px;
+  padding: 4px 12px;
+}
+
+.badgeIcon {
+  font-size: 13px;
+}
+
+.badgeAmount {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.badgeLabel {
+  font-size: 11px;
+  color: var(--brand);
+  opacity: 0.7;
+}
+
+/* Skeleton Loader */
+.skeleton {
+  border-radius: 6px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.skeletonCompact {
+  width: 60px;
+  height: 18px;
+}
+
+.skeletonFull {
+  width: 80px;
+  height: 32px;
+}
+
+.error {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Animation */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
