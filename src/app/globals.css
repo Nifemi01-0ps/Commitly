@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
 @import "tailwindcss";
 
-/* ─── Design tokens ────────────────────────────────────────────────────────── */
+/* ─── Design tokens ─── */
 :root {
   --brand:      #4F46E5;
   --brand-soft: #EEF2FF;
@@ -25,7 +25,7 @@
   --shadow-lg:  0 4px 6px rgba(0,0,0,0.04), 0 10px 32px rgba(79,70,229,0.14);
 }
 
-/* ─── Reset ────────────────────────────────────────────────────────────────── */
+/* ─── Reset ──── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { height: 100%; }
@@ -110,21 +110,44 @@ body {
 /* layout.tsx  */
 /* Root App Container */
 .app-container {
+  width: 100%;
   max-width: 480px;
   margin: 0 auto;
   background: var(--bg);
   min-height: 100vh;
   position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  transition: max-width 0.4s ease;
+  padding-left: 16px;
+  padding-right: 16px;
+
 }
 
 /* Optional: Ensure it works well on mobile */
-@media (max-width: 480px) {
+@media (min-width: 481px) {
   .app-container {
-    max-width: 100%;
+    max-width: 520px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
+  
+}
+@media (min-width: 768px) {
+    .app-container {
+        max-width: 580px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+@media (min-width: 1024) {
+    .app-container {
+        max-width: 620px;
+        padding-left: 28px;
+        padding-right: 28px;
+    }
 }
 
-/* ─── Utility classes ──────────────────────────────────────────────────────── */
+/* ─── Utility classes ───── */
 .font-display { font-family: 'Bricolage Grotesque', sans-serif; }
 
 /* Tap highlight removal for mobile */
