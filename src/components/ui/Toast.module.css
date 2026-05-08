@@ -1,0 +1,67 @@
+.toastContainer {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 200;
+  pointer-events: none;
+}
+
+.toastItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: 14px;
+  background: var(--card);
+  border: 1.5px solid rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+  pointer-events: all;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.2s;
+}
+
+.toastItem.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Icon */
+.toastIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Type-specific colors */
+.toastItem:nth-child(1) .toastIcon { background: #16a34a; color: white; } /* success */
+.toastItem:nth-child(2) .toastIcon { background: #ef4444; color: white; } /* error - adjust as needed */
+.toastItem:nth-child(3) .toastIcon { background: #3b82f6; color: white; } /* info */
+.toastItem:nth-child(4) .toastIcon { background: #6b7280; color: white; animation: spin 1s linear infinite; } /* loading */
+
+/* Message */
+.toastMessage {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+/* Loading Spinner Animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
