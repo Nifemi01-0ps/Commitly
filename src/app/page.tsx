@@ -11,7 +11,7 @@ import BottomNav from "@/components/BottomNav";
 import NotificationBell from "@/components/NotificationBell";
 import RealModeBadge from "@/components/RealModeBadge";
 import { CreditBalance } from "@/components/ui";
-import styles from "../styles/Homepage.module";
+import styles from "../styles/HomePage.module.css";
 
 const TICKER_ITEMS = [
   "12 plans completed today",
@@ -38,7 +38,6 @@ export default function HomePage() {
 
   useEffect(() => { setMounted(true); }, []);
 
-  // Redirect unsigned users
   useEffect(() => {
     if (mounted && !user) router.replace("/onboarding");
   }, [mounted, user, router]);
@@ -73,7 +72,7 @@ export default function HomePage() {
       </nav>
 
       <div className={styles.container}>
-        {/* Hero / Greeting */}
+        {/* Hero */}
         <div className={`${styles.hero} ${mounted ? styles.mounted : ""}`}>
           <div className={styles.greeting}>
             {getGreeting()}, {firstName} 👋
@@ -84,7 +83,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Stat Cards */}
+        {/* Stats */}
         <div className={`${styles.statsGrid} ${mounted ? styles.mounted : ""}`}>
           {[
             { value: livePlans.length + upcomingPlans.length, label: "Plans today", color: "var(--brand)" },
@@ -100,7 +99,7 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* Primary CTA */}
+        {/* CTA */}
         <div className={`${styles.ctaRow} ${mounted ? styles.mounted : ""}`}>
           <Link href="/create" className={styles.createButtonLink}>
             <button className={styles.createButton}>
