@@ -107,6 +107,23 @@ body {
   to { transform: rotate(360deg); }
 }
 
+/* layout.tsx  */
+/* Root App Container */
+.app-container {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--bg);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Optional: Ensure it works well on mobile */
+@media (max-width: 480px) {
+  .app-container {
+    max-width: 100%;
+  }
+}
+
 /* ─── Utility classes ──────────────────────────────────────────────────────── */
 .font-display { font-family: 'Bricolage Grotesque', sans-serif; }
 
