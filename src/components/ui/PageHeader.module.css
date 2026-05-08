@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--border);
+}
+
+.backLink {
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.backButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.backButton:hover {
+  transform: scale(1.05);
+}
+
+.backButton:active {
+  transform: scale(0.95);
+}
+
+.title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
