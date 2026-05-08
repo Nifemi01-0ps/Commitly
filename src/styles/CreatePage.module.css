@@ -1,0 +1,482 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(248, 249, 251, 0.9);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.backButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+}
+
+.headerTitle {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.spacer {
+  width: 36px;
+}
+
+.container {
+  padding: 24px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Common Section Styles */
+.section {
+  animation: fadeUp 0.35s both;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.required {
+  color: var(--red);
+}
+
+/* Input Styles */
+.inputWrapper {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 46px 14px 16px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  outline: none;
+  box-shadow: var(--shadow);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input.active {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.input.error {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.charCount {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.charCount.danger {
+  color: var(--red);
+}
+
+.progressBar {
+  margin-top: 6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.1s, background 0.2s;
+}
+
+.errorText {
+  font-size: 12px;
+  color: var(--red);
+  margin-top: 5px;
+}
+
+/* Preset Buttons */
+.presetButtons {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.presetBtn {
+  padding: 7px 14px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.15s;
+}
+
+.presetBtn.active {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+/* Type Cards */
+.typeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.typeCard {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 2px solid var(--border);
+  background: var(--card);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+  box-shadow: var(--shadow);
+}
+
+.typeCard.selected {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.typeIcon {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.typeLabel {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.typeDesc {
+  font-size: 12px;
+}
+
+/* Credit Input */
+.creditsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.creditInputCard {
+  background: var(--card);
+  border-radius: 14px;
+  border: 1.5px solid var(--border);
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+  margin-bottom: 10px;
+}
+
+.creditInputCard.error {
+  border-color: var(--red);
+}
+
+.creditInputRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.creditIcon {
+  font-size: 22px;
+  color: var(--brand);
+}
+
+.creditNumberInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 28px;
+  font-weight: 800;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  background: transparent;
+  width: 100%;
+}
+
+.creditsLabel {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.creditFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 11px;
+}
+
+.bonus {
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* Preset Chips */
+.presetChips {
+  display: flex;
+  gap: 8px;
+}
+
+.chip {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.15s;
+}
+
+.chipSelected {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+}
+
+.helperText {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.warning {
+  color: #dc2626;
+}
+
+/* Proof Options */
+.proofOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.proofCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  border-radius: 14px;
+  border: 2px solid var(--border);
+  background: var(--card);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+  width: 100%;
+  box-shadow: var(--shadow);
+}
+
+.proofCard.selected {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.proofIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #f4f4f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.proofIconActive {
+  background: rgba(79, 70, 229, 0.12);
+}
+
+.proofContent {
+  flex: 1;
+}
+
+.proofLabel {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 1px;
+}
+
+.proofDesc {
+  font-size: 12px;
+}
+
+.checkCircle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.checkActive {
+  background: var(--brand);
+}
+
+/* Submit */
+.submitSection {
+  animation: fadeUp 0.35s 0.25s both;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.submitButton:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.spinner {
+  animation: spin 0.7s linear infinite;
+}
+
+.submitHelper {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* Success Screen */
+.successScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.successEmoji {
+  font-size: 72px;
+  margin-bottom: 20px;
+  animation: bounceIn 0.5s both;
+}
+
+.successTitle {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+  animation: fadeUp 0.4s 0.2s both;
+}
+
+.successDesc {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 28px;
+  animation: fadeUp 0.4s 0.3s both;
+  line-height: 1.6;
+}
+
+.creditsRemaining {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 14px;
+  animation: fadeUp 0.4s 0.4s both;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: var(--muted);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  0%   { transform: scale(0.6); }
+  60%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
