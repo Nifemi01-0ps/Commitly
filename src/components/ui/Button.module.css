@@ -1,0 +1,100 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+  border: none;
+  outline: none;
+}
+
+/* Variants */
+.primary {
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.04), 0 10px 32px rgba(79,70,229,0.2);
+}
+
+.secondary {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.success {
+  background: var(--green);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(22,163,74,0.25);
+}
+
+.danger {
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(220,38,38,0.2);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--brand);
+  border: 1.5px solid var(--brand);
+  box-shadow: none;
+}
+
+/* Sizes */
+.sm {
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 9px;
+}
+
+.md {
+  padding: 12px 18px;
+  font-size: 14px;
+  border-radius: 11px;
+}
+
+.lg {
+  padding: 15px 20px;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+/* Full Width */
+.fullWidth {
+  width: 100%;
+}
+
+/* Disabled / Loading State */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: scale(0.98);
+}
+
+/* Hover Effect */
+.button:not(:disabled):hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+/* Icon */
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+/* Spinner */
+.spinner {
+  animation: btnSpin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes btnSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
