@@ -1,0 +1,370 @@
+.page {
+  padding-bottom: 90px;
+}
+
+.notFound {
+  padding: 60px 20px;
+}
+
+/* Hero Header */
+.hero {
+  background: linear-gradient(160deg, #4F46E5 0%, #7C3AED 100%);
+  padding: 52px 20px 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.decorCircle1 {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+}
+
+.decorCircle2 {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.userName {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.reliabilityBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* Stats Row */
+.statsRow {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.statPill {
+  flex: 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.statPillLight {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.statIcon {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.statValue {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.statPillLight .statValue {
+  color: #fff;
+}
+
+.statLabel {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.statPillLight .statLabel {
+  color: rgba(255,255,255,0.65);
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.container {
+  padding: 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Reliability Meter */
+.meterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.scoreValue {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.progressBarContainer {
+  height: 10px;
+  border-radius: 10px;
+  background: var(--border);
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.progressLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.statsGrid {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* Stat Box */
+.statBox {
+  flex: 1;
+  text-align: center;
+  padding: 10px 8px;
+  background: #F8F9FB;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.statBoxValue {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.statBoxLabel {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Active Plans */
+.sectionTitle {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.activePlansList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.planLink {
+  text-decoration: none;
+}
+
+.planCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #F8F9FB;
+  border: 1px solid var(--border);
+}
+
+.planIcon {
+  font-size: 16px;
+}
+
+.planTitle {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.statusBadge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.live {
+  color: var(--amber);
+  background: var(--amber-soft);
+}
+
+.upcoming {
+  color: var(--brand);
+  background: var(--brand-soft);
+}
+
+/* History */
+.historyList {
+  display: flex;
+  flex-direction: column;
+}
+
+.historyItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.historyItem:last-child {
+  border-bottom: none;
+}
+
+.historyIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.historyContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.historyTitle {
+  font-size: 13px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.historyMeta {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.delta {
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.emptyHistory {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Settings */
+.settingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.settingsRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.settingsRow:last-child {
+  border-bottom: none;
+}
+
+.settingsIcon {
+  font-size: 16px;
+  width: 24px;
+  text-align: center;
+}
+
+.settingsLabel {
+  font-size: 14px;
+  color: var(--muted);
+  flex: 1;
+}
+
+.settingsValue {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.signOutSection {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
