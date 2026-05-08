@@ -1,0 +1,231 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--brand);
+  letter-spacing: -0.5px;
+}
+
+/* Main Content */
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 24px 60px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeUp 0.4s both;
+}
+
+.heroEmoji {
+  font-size: 56px;
+  margin-bottom: 16px;
+}
+
+.heroTitle {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.heroTitle span {
+  color: var(--brand);
+}
+
+.heroSubtitle {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 300px;
+}
+
+/* Features */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 340px;
+  margin-bottom: 36px;
+  animation: fadeUp 0.4s 0.1s both;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.featureIcon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* Input Section */
+.inputSection {
+  width: 100%;
+  max-width: 340px;
+  animation: fadeUp 0.4s 0.2s both;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  color: var(--text);
+  outline: none;
+  box-shadow: var(--shadow);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  margin-bottom: 14px;
+}
+
+.input.active {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.input.error {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.errorText {
+  font-size: 12px;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+
+.continueButton {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: #d1d5db;
+  color: #fff;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: not-allowed;
+  transition: all 0.2s;
+}
+
+.buttonActive {
+  background: var(--brand);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+}
+
+.footerText {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+/* Welcome Screen */
+.welcomeScreen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background: var(--bg);
+  text-align: center;
+}
+
+.welcomeEmoji {
+  font-size: 72px;
+  margin-bottom: 20px;
+  animation: bounceIn 0.6s both;
+}
+
+.welcomeTitle {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+  animation: fadeUp 0.4s 0.2s both;
+}
+
+.welcomeDesc {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 28px;
+  line-height: 1.7;
+  animation: fadeUp 0.4s 0.3s both;
+}
+
+.creditsBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 15px;
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  animation: fadeUp 0.4s 0.4s both;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0%   { transform: scale(0.6); }
+  60%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
