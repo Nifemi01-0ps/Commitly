@@ -2,16 +2,15 @@
   padding-bottom: 90px;
 }
 
-.emptyWrapper {
+.emptyStateContainer {
   padding: 40px 20px;
 }
 
-.listWrapper {
+.activityList {
   padding: 8px 20px 0;
 }
 
-/* ─── Day Header ───────────────────────────────── */
-
+/* Day Header */
 .dayHeader {
   display: flex;
   align-items: center;
@@ -28,14 +27,13 @@
   white-space: nowrap;
 }
 
-.dayLine {
+.divider {
   flex: 1;
   height: 1px;
   background: var(--border);
 }
 
-/* ─── Event Item ───────────────────────────────── */
-
+/* Event Item */
 .eventItem {
   display: flex;
   align-items: flex-start;
@@ -44,100 +42,78 @@
   border-bottom: 1px solid var(--border);
 }
 
-.newItem {
+.newEvent {
   animation: fadeSlideIn 0.35s both;
 }
-
-/* ─── Avatar ───────────────────────────────── */
 
 .avatar {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  position: relative;
-  flex-shrink: 0;
-
   font-size: 13px;
   font-weight: 700;
   color: #fff;
+  flex-shrink: 0;
+  position: relative;
 }
 
 .eventBadge {
   position: absolute;
   bottom: -2px;
   right: -2px;
-
   width: 18px;
   height: 18px;
   border-radius: 50%;
-
   border: 2px solid var(--bg);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 9px;
   font-weight: 700;
 }
 
-/* ─── Content ───────────────────────────────── */
-
+/* Content */
 .content {
   flex: 1;
   min-width: 0;
 }
 
-.text {
+.eventText {
   font-size: 14px;
   line-height: 1.5;
 }
 
-.name {
+.eventText strong {
   font-weight: 600;
 }
 
-.message {
-  color: var(--muted);
-}
-
-/* ─── Credit Pill ───────────────────────────────── */
-
-.creditWrapper {
-  margin-top: 4px;
-}
-
+/* Credit Pill */
 .creditPill {
+  margin-top: 4px;
   font-size: 11px;
   font-weight: 600;
-
   padding: 2px 8px;
   border-radius: 20px;
+  display: inline-block;
 }
 
-/* ─── Time ───────────────────────────────── */
-
-.time {
-  flex-shrink: 0;
-  padding-top: 2px;
-
+/* Timestamp */
+.timestamp {
   font-size: 12px;
   color: var(--muted);
+  flex-shrink: 0;
+  padding-top: 2px;
 }
 
-/* ─── Animation ───────────────────────────────── */
-
+/* Animation */
 @keyframes fadeSlideIn {
   from {
     opacity: 0;
     transform: translateY(8px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
