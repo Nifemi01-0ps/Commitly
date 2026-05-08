@@ -1,0 +1,172 @@
+.page {
+  padding-bottom: 100px;
+}
+
+.container {
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+/* Meta */
+.metaGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.creditSection {
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+/* Missed Banner */
+.missedBanner {
+  background: var(--red-soft);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12;
+}
+
+.missedEmoji {
+  font-size: 22px;
+}
+
+.missedTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--red);
+  margin-bottom: 2px;
+}
+
+.missedDesc {
+  font-size: 13px;
+  color: #991b1b;
+}
+
+/* Participants */
+.participantsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.participantsTitle {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.othersCount {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.emptyParticipants {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.emptyEmoji {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.participantsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+/* Invite */
+.inviteSection {
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.inviteLabel {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.inviteRow {
+  display: flex;
+  gap: 8px;
+}
+
+.inviteLink {
+  flex: 1;
+  padding: 10px 12px;
+  background: #f8f9fb;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.copyButton {
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.25s;
+  font-family: 'DM Sans', sans-serif;
+  min-width: 72px;
+}
+
+.copyButton:hover {
+  background: #4338ca;
+}
+
+/* Proof Submitted */
+.proofSubmitted {
+  background: var(--green-soft);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.proofTitle {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+
+.proofText {
+  font-size: 14px;
+  color: #166534;
+}
+
+/* Not Found */
+.notFound {
+  padding: 60px 20px;
+}
