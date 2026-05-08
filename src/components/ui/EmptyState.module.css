@@ -1,0 +1,47 @@
+.emptyState {
+  padding: 48px 24px;
+  text-align: center;
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.icon {
+  font-size: 44px;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.actionLink {
+  text-decoration: none;
+}
+
+.actionButton {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand);
+  padding: 8px 20px;
+  border-radius: 10px;
+  border: 1.5px solid var(--brand);
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  background: var(--brand);
+  color: #fff;
+  transform: translateY(-1px);
+}
