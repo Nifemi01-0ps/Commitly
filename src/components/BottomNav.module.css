@@ -1,0 +1,78 @@
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border);
+  display: flex;
+  z-index: 100;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Regular Navigation Items */
+.navLink {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 10px 0 12px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.navLink:active {
+  opacity: 0.7;
+}
+
+.icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.label.active {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+/* Create Button (Center FAB) */
+.createLink {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0 12px;
+  text-decoration: none;
+}
+
+.createButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  margin-top: -14px;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+  font-weight: 400;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.createButton:active {
+  transform: scale(0.92);
+}
