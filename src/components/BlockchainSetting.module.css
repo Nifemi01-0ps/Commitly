@@ -1,0 +1,298 @@
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+}
+
+.realMode {
+  background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  background: #F4F4F5;
+}
+
+.realMode .icon {
+  background: var(--brand);
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+/* Badge Styles */
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mockBadge { background: #F4F4F5; color: var(--muted); }
+.devnetBadge { background: #FEF3C7; color: #B45309; }
+.mainnetBadge { background: #DCFCE7; color: var(--green); }
+
+.modeText {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Content */
+.content {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.section {
+  margin-bottom: 8px;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+/* Address */
+.addressRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.address {
+  flex: 1;
+  padding: 10px 13px;
+  background: #F8F9FB;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-family: monospace;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copyButton {
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--brand);
+  color: white;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Balance */
+.balanceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.lastUpdated {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.balanceDisplay {
+  margin-bottom: 10px;
+}
+
+.balanceAmount {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.solValue {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.solLabel {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.creditEquivalent {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 2px 8px;
+  background: #F4F4F5;
+  border-radius: 20px;
+}
+
+.refreshButton {
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: 11px;
+  background: var(--card);
+  border: 1.5px solid var(--brand);
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.refreshButton:disabled {
+  background: #F4F4F5;
+  border-color: var(--border);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+/* Rate Box */
+.rateBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  background: #F8F9FB;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.rateSmall {
+  margin-left: auto;
+  font-size: 12px;
+}
+
+/* Faucet */
+.faucetBox {
+  padding: 12px 14px;
+  background: var(--amber-soft);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  border-radius: 12px;
+}
+
+.faucetTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--amber);
+  margin-bottom: 4px;
+}
+
+.faucetDesc {
+  font-size: 12px;
+  color: #92400E;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.faucetActions {
+  display: flex;
+  gap: 8px;
+}
+
+.faucetButton,
+.copyFaucetButton {
+  padding: 8px 16px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faucetButton {
+  background: var(--amber);
+  color: white;
+  border: none;
+}
+
+.copyFaucetButton {
+  background: transparent;
+  border: 1px solid var(--amber);
+  color: var(--amber);
+}
+
+/* Skeleton */
+.skeleton {
+  width: 120px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #e8e8e8 25%, #f4f4f4 50%, #e8e8e8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Messages */
+.message {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.success {
+  background: var(--green-soft);
+  color: var(--green);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.info {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+/* Security Note */
+.securityNote {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
