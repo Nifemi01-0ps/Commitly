@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Success State */
+.successContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.successMessage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: var(--green-soft);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  color: var(--green);
+  font-weight: 600;
+  font-size: 14px;
+  animation: fadeSlideIn 0.3s both;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Insufficient Funds */
+.insufficientContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.creditInfo {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4px;
+  font-size: 12px;
+}
+
+.needMore {
+  color: var(--red);
+}
+
+.haveCredits {
+  color: var(--muted);
+}
+
+/* Helper Text */
+.helperText {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.onChain {
+  color: var(--brand);
+  font-weight: 500;
+}
