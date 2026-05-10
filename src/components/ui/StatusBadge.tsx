@@ -1,5 +1,5 @@
-import { STATUS_BADGE } from "@/lib/utils";
-import type { Plan } from "@/store/usePlansStore";
+import { STATUS_BADGE } from "../../lib/utils";
+import type { Plan } from "../../store/usePlansStore";
 import styles from "./StatusBadge.module.css";
 
 interface StatusBadgeProps {
