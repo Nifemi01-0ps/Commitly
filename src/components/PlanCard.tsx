@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Plan } from "@/store/usePlansStore";
-import { formatDeadline, timeUntil } from "@/lib/utils";
+import { Plan } from "../store/usePlansStore";
+import { formatDeadline, timeUntil } from "../lib/utils";
 import { StatusBadge, AvatarStack } from "../components/ui";
 import styles from "./PlanCard.module.css";
 
