@@ -1,6 +1,6 @@
 "use client";
 
-import { useUserStore } from "@/store/useUserStore";
+import { useUserStore } from "../store/useUserStore";
 import styles from "./RealModeBadge.module.css";
 
 interface RealModeBadgeProps {
