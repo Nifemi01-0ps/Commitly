@@ -1,0 +1,24 @@
+.full {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+/* Compact variant */
+.compact {
+  font-size: 12px;
+  cursor: default;
+}
+
+/* Optional hover effect for better UX */
+.full:hover {
+  background: linear-gradient(135deg, #E0E7FF, #D1D9FF);
+  border-color: rgba(79, 70, 229, 0.3);
+}
