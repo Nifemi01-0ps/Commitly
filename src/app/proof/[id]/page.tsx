@@ -3,14 +3,14 @@
 import { use, useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { usePlansStore } from "@/store/usePlansStore";
-import { useReliabilityStore } from "@/store/useReliabilityStore";
-import { useUserStore } from "@/store/useUserStore";
-import { useActivityStore } from "@/store/useActivityStore";
-import { useRealMode } from "@/hooks/useRealMode";
-import { EmptyState } from "@/components/ui";
-import RealModeBadge from "@/components/RealModeBadge";
-import { isPast } from "@/lib/utils";
+import { usePlansStore } from "../../../store/usePlansStore";
+import { useReliabilityStore } from "../../../store/useReliabilityStore";
+import { useUserStore } from "../../../store/useUserStore";
+import { useActivityStore } from "../../../store/useActivityStore";
+import { useRealMode } from "../../../hooks/useRealMode";
+import { EmptyState } from "../../../components/ui";
+import RealModeBadge from "../../../components/RealModeBadge";
+import { isPast } from "../../../lib/utils";
 import styles from "../../styles/ProofPage.module.css";
 
 type SubmitState = "idle" | "submitting" | "success" | "missed";
