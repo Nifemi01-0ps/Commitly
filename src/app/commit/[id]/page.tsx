@@ -2,11 +2,11 @@
 
 import { use, useState, useEffect } from "react";
 import Link from "next/link";
-import { usePlansStore } from "@/store/usePlansStore";
-import { PageHeader, Button, StatusBadge, EmptyState, ProofBadge } from "@/components/ui";
-import BottomNav from "@/components/BottomNav";
-import JoinPoolButton from "@/components/JoinPoolButton";
-import { formatDeadline, timeUntil, isPast } from "@/lib/utils";
+import { usePlansStore } from "../../../store/usePlansStore";
+import { PageHeader, Button, StatusBadge, EmptyState, ProofBadge } from "../../../components/ui";
+import BottomNav from "../../../components/BottomNav";
+import JoinPoolButton from "../../../components/JoinPoolButton";
+import { formatDeadline, timeUntil, isPast } from "../../../lib/utils";
 import styles from "../../styles/CommitDetailPage.module.css";
 
 type JoinState = "idle" | "joining" | "joined";
