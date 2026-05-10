@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useCallback, useMemo } from "react";
-import { useUserStore } from "@/store/useUserStore";
-import { useCreditsStore } from "@/store/useCreditsStore";
-import type { CreditAction, CreditActionResult } from "@/services/creditService";
+import { useUserStore } from "../store/useUserStore";
+import { useCreditsStore } from "../store/useCreditsStore";
+import type { CreditAction, CreditActionResult } from "../services/creditService";
 
 export interface UseCreditsReturn {
   balance: number | null;
