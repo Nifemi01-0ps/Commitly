@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import { useUserStore, getHiddenWallet } from "@/store/useUserStore";
-import { getAccountBalance } from "@/services/solanaService";
-import { CREDIT_TO_SOL, solToCredits } from "@/services/escrowService";
+import { useUserStore, getHiddenWallet } from "../store/useUserStore";
+import { getAccountBalance } from "../services/solanaService";
+import { CREDIT_TO_SOL, solToCredits } from "../services/escrowService";
 
 export type RefreshReason = "manual" | "auto" | "post-tx" | "poll";
 
