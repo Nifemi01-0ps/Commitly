@@ -57,7 +57,7 @@ export function genId(prefix = "id"): string {
 
 // ─── Plan Status Derivation ────
 
-import type { Plan, PlanStatus } from "@/store/usePlansStore";
+import type { Plan, PlanStatus } from "../store/usePlansStore";
 
 export function deriveStatus(plan: Plan): PlanStatus {
   // Terminal states should never be overridden
