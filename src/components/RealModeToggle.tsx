@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useUserStore } from "@/store/useUserStore";
-import { CREDIT_TO_SOL } from "@/services/escrowService";
+import { useUserStore } from "../store/useUserStore";
+import { CREDIT_TO_SOL } from "../services/escrowService";
 import styles from "./RealModeToggle.module.css";
 
 export default function RealModeToggle() {
