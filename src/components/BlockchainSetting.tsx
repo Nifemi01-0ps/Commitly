@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useUserStore } from "@/store/useUserStore";
-import { useWalletBalance } from "@/hooks/useWalletBalance";
-import { getSolanaMode } from "@/services/solanaService";
+import { useUserStore } from "../store/useUserStore";
+import { useWalletBalance } from "../hooks/useWalletBalance";
+import { getSolanaMode } from "../services/solanaService";
 import styles from "./BlockchainSettings.module.css";
 
 const FAUCET_URL = "https://faucet.solana.com";
