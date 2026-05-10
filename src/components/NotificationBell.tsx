@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { useNotifStore, Notification, NotifType } from "@/store/useNotifStore";
+import { useNotifStore, Notification, NotifType } from "../store/useNotifStore";
 import styles from "./NotificationBell.module.css";
 
 // Config for notification types
