@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useUserStore } from "@/store/useUserStore";
-import { useReliabilityStore } from "@/store/useReliabilityStore";
-import { usePlansStore } from "@/store/usePlansStore";
-import { Button, EmptyState } from "@/components/ui";
-import BottomNav from "@/components/BottomNav";
-import RealModeToggle from "@/components/RealModeToggle";
-import BlockchainSettings from "@/components/BlockchainSettings";
+import { useUserStore } from "../../store/useUserStore";
+import { useReliabilityStore } from "../../store/useReliabilityStore";
+import { usePlansStore } from "../../store/usePlansStore";
+import { Button, EmptyState } from "../../components/ui";
+import BottomNav from "../../components/BottomNav";
+import RealModeToggle from "../../components/RealModeToggle";
+import BlockchainSettings from "../../components/BlockchainSetting";
 import styles from "../../styles/stylesProfilePage.module.css";
 
 function timeAgo(iso: string): string {
