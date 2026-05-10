@@ -16,6 +16,12 @@ export const PROOF_WEIGHTS: Record<ProofType, number> = {
   link: 3,
 };
 
+export const PROOF_LABELS: Record<ProofType, string> = {
+  self:  "Quick confirm",
+  image: "Photo proof",
+  link:  "Link proof",
+};
+
 export const CONFIDENCE_LEVELS: Record<ProofType, { label: string; icon: string; color: string; bg: string }> = {
   self:  { label: "Low confidence",    icon: "⚠️", color: "#D97706", bg: "#FEF3C7" },
   image: { label: "Medium confidence", icon: "📸", color: "#0891B2", bg: "#DBEAFE" },
