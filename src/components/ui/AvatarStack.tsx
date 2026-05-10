@@ -1,4 +1,4 @@
-import type { Participant } from "@/store/usePlansStore";
+import type { Participant } from "../../store/usePlansStore";
 import styles from "./AvatarStack.module.css";
 
 interface AvatarStackProps {
