@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { usePlansStore } from "@/store/usePlansStore";
-import { useReliabilityStore } from "@/store/useReliabilityStore";
-import { useUserStore } from "@/store/useUserStore";
-import PlanCard from "@/components/PlanCard";
-import BottomNav from "@/components/BottomNav";
-import NotificationBell from "@/components/NotificationBell";
-import RealModeBadge from "@/components/RealModeBadge";
-import { CreditBalance } from "@/components/ui";
+import { usePlansStore } from "../store/usePlansStore";
+import { useReliabilityStore } from "../store/useReliabilityStore";
+import { useUserStore } from "../store/useUserStore";
+import PlanCard from "../components/PlanCard";
+import BottomNav from "../components/BottomNav";
+import NotificationBell from "../components/NotificationBell";
+import RealModeBadge from "../components/RealModeBadge";
+import { CreditBalance } from "../components/ui";
 import styles from "../styles/HomePage.module.css";
 
 const TICKER_ITEMS = [
