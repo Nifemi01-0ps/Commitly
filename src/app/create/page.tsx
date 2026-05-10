@@ -3,11 +3,11 @@
 import { useState, Suspense, useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { usePlansStore, PlanType, ProofType } from "@/store/usePlansStore";
-import { useUserStore } from "@/store/useUserStore";
-import { useActivityStore } from "@/store/useActivityStore";
-import { useNotifStore } from "@/store/useNotifStore";
-import { minDeadline } from "@/lib/utils";
+import { usePlansStore, PlanType, ProofType } from "../../store/usePlansStore";
+import { useUserStore } from "../../store/useUserStore";
+import { useActivityStore } from "../../store/useActivityStore";
+import { useNotifStore } from "../../store/useNotifStore";
+import { minDeadline } from "../../lib/utils";
 import styles from "./CreatePage.module.css";
 
 const CREDIT_PRESETS = [5, 10, 20, 50];
