@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { useUserStore } from "@/store/useUserStore";
+import { useUserStore } from "../../store/useUserStore";
 import styles from "./OnboardingPage.module.css";
 
 export default function OnboardingPage() {
