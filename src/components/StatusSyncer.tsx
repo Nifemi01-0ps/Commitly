@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { usePlansStore } from "@/store/usePlansStore";
-import { useReliabilityStore } from "@/store/useReliabilityStore";
-import { useUserStore } from "@/store/useUserStore";
-import { useActivityStore } from "@/store/useActivityStore";
-import { useNotifStore } from "@/store/useNotifStore";
+import { usePlansStore } from "../store/usePlansStore";
+import { useReliabilityStore } from "../store/useReliabilityStore";
+import { useUserStore } from "../store/useUserStore";
+import { useActivityStore } from "../store/useActivityStore";
+import { useNotifStore } from "../store/useNotifStore";
 
 const LOG_PREFIX = "[StatusSyncer]";
 
