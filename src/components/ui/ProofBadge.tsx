@@ -1,5 +1,5 @@
-import { PROOF_LABELS, CONFIDENCE_LEVELS } from "@/store/useReliabilityStore";
-import type { ProofType } from "@/store/useReliabilityStore";
+import { PROOF_LABELS, CONFIDENCE_LEVELS } from "../../store/useReliabilityStore";
+import type { ProofType } from "../../store/useReliabilityStore";
 import styles from "./ProofBadge.module.css";
 
 interface ProofBadgeProps {
