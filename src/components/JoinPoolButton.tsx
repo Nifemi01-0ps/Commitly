@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { usePlansStore } from "@/store/usePlansStore";
-import { useUserStore } from "@/store/useUserStore";
-import { useActivityStore } from "@/store/useActivityStore";
-import { useRealMode } from "@/hooks/useRealMode";
+import { usePlansStore } from "../store/usePlansStore";
+import { useUserStore } from "../store/useUserStore";
+import { useActivityStore } from "../store/useActivityStore";
+import { useRealMode } from "../hooks/useRealMode";
 import { useToast } from "../components/ui/Toast";
 import { Button } from "../components/ui";
-import RealModeBadge from "@/components/RealModeBadge";
+import RealModeBadge from "../components/RealModeBadge";
 import styles from "./JoinPoolButton.module.css";
 
 interface JoinPoolButtonProps {
