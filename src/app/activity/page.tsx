@@ -1,9 +1,9 @@
 "use client";
 
 import { useMemo } from "react";
-import { useActivityStore, ActivityEvent, ActivityType } from "@/store/useActivityStore";
-import { PageHeader, EmptyState } from "@/components/ui";
-import BottomNav from "@/components/BottomNav";
+import { useActivityStore, ActivityEvent, ActivityType } from "../../store/useActivityStore";
+import { PageHeader, EmptyState } from "../../components/ui"
+import BottomNav from "../../components/BottomNav";
 import styles from "../../styles/ActivityPage.module.css";
 
 function timeAgo(iso: string): string {
