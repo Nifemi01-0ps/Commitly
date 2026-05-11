@@ -11,7 +11,7 @@ import BottomNav from "../components/BottomNav";
 import NotificationBell from "../components/NotificationBell";
 import RealModeBadge from "../components/RealModeBadge";
 import { CreditBalance } from "../components/ui";
-import styles from "../styles/HomePage.module.css";
+import styles from "../styles/Homepage.module.css";
 
 const TICKER_ITEMS = [
   "12 plans completed today",
