@@ -1,6 +1,6 @@
 "use client";
 
-import { useCredits } from "@/hooks/useCredits";
+import { useCredits } from "../../hooks/useCredits";
 import styles from "./CreditBalance.module.css";
 
 interface CreditBalanceProps {
