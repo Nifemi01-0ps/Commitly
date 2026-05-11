@@ -121,8 +121,8 @@ export const useReliabilityStore = create<ReliabilityStore>()(
 
       getLevel: () => {
         const { score } = get();
-        if (score >= 35) return "High";
-        if (score >= 15) return "Medium";
+        if (score >= 40) return "High";
+        if (score >= 20) return "Medium";
         return "Low";
       },
 
