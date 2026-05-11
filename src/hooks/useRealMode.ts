@@ -1,10 +1,10 @@
 "use client";
 
 import { useCallback } from "react";
-import { useUserStore } from "@/store/useUserStore";
-import { useTxFeedbackStore } from "@/store/useTxFeedbackStore";
-import { lockCommitment, releaseToWinner, forfeitCommitment, CREDIT_TO_SOL } from "@/services/escrowService";
-import { useWalletBalance } from "@/hooks/useWalletBalance";
+import { useUserStore } from "../store/useUserStore";
+import { useTxFeedbackStore } from "../store/useTxFeedbackStore";
+import { lockCommitment, releaseToWinner, forfeitCommitment, CREDIT_TO_SOL } from "../services/escrowService";
+import { useWalletBalance } from "../hooks/useWalletBalance";
 
 export interface CommitResult {
   success: boolean;
@@ -20,10 +20,10 @@ export function useRealMode() {
 
   const isRealMode = user?.realMode ?? false;
 
-  // ── Lock Commitment (when joining or creating a plan) ─────────────────────
+  // ── Lock Commitment ─────────────────────────────────────────────────────
   const lockCommit = useCallback(async (
     planId: string,
-    credits: number,
+    credits: number
   ): Promise<CommitResult> => {
     if (!user) {
       return { success: false, message: "Not signed in", onChain: false };
@@ -39,14 +39,14 @@ export function useRealMode() {
         pushFeedback("Commitment secured on-chain ⚡", "success");
         refreshAfterTx();
       } else {
-        pushFeedback(result.message || "Failed to secure on-chain", "error");
+        pushFeedback("Failed to secure on-chain", "error");
       }
 
       return {
         success: result.success,
         message: result.success 
           ? "Commitment secured on-chain ⚡" 
-          : (result.message || "Blockchain unavailable"),
+          : "Credits committed (blockchain unavailable)",
         onChain: result.success,
         txRef: result.txRef,
       };
@@ -57,9 +57,9 @@ export function useRealMode() {
     }
   }, [user, isRealMode, pushFeedback, refreshAfterTx]);
 
-  // ── Release Commitment (successful completion) ─────
+  // ── Release Commitment ──────────────────────────────────────────────────
   const releaseCommit = useCallback(async (
-    planId: string,
+    planId: string
   ): Promise<CommitResult> => {
     if (!user) return { success: false, message: "Not signed in", onChain: false };
     if (!isRealMode) return { success: true, message: "Credits returned", onChain: false };
@@ -71,7 +71,7 @@ export function useRealMode() {
         pushFeedback("Reward settled on-chain ⚡", "success");
         refreshAfterTx();
       } else {
-        pushFeedback("Credits returned (blockchain pending)", "error");
+        pushFeedback("Settlement failed", "error");
       }
 
       return {
@@ -82,13 +82,14 @@ export function useRealMode() {
       };
     } catch (err) {
       console.error("releaseCommit failed:", err);
-      return { success: false, message: "Failed to release commitment", onChain: false };
+      pushFeedback("Failed to release commitment", "error");
+      return { success: false, message: "Settlement failed", onChain: false };
     }
   }, [user, isRealMode, pushFeedback, refreshAfterTx]);
 
-  // ── Forfeit Commitment (missed deadline) ───
+  // ── Forfeit Commitment ──────────────────────────────────────────────────
   const forfeitCommit = useCallback(async (
-    planId: string,
+    planId: string
   ): Promise<CommitResult> => {
     if (!user) return { success: false, message: "Not signed in", onChain: false };
     if (!isRealMode) return { success: true, message: "Credits forfeited", onChain: false };
@@ -102,22 +103,22 @@ export function useRealMode() {
 
       return {
         success: result.success,
-        message: result.success ? "Commitment forfeited on-chain" : "Credits forfeited",
+        message: "Commitment forfeited",
         onChain: result.success,
         txRef: result.txRef,
       };
     } catch (err) {
       console.error("forfeitCommit failed:", err);
-      return { success: false, message: "Failed to forfeit commitment", onChain: false };
+      return { success: false, message: "Forfeit failed", onChain: false };
     }
   }, [user, isRealMode, refreshAfterTx]);
 
+  // ── Helper: Credits → SOL Display ───────────────────────────────────────
   const creditsToSolDisplay = useCallback((credits: number): string => {
     if (!isRealMode || credits <= 0) return "";
-    
     const sol = credits * CREDIT_TO_SOL;
     return sol < 0.001 
-      ? `${(sol * 1000).toFixed(2)} mSOL`
+      ? `${(sol * 1000).toFixed(2)} mSOL` 
       : `${sol.toFixed(4)} SOL`;
   }, [isRealMode]);
 
