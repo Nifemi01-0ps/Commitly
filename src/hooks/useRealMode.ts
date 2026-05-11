@@ -57,7 +57,7 @@ export function useRealMode() {
     }
   }, [user, isRealMode, pushFeedback, refreshAfterTx]);
 
-  // ── Release Commitment ──────────────────────────────────────────────────
+  // ── Release Commitment ──
   const releaseCommit = useCallback(async (
     planId: string
   ): Promise<CommitResult> => {
@@ -87,7 +87,7 @@ export function useRealMode() {
     }
   }, [user, isRealMode, pushFeedback, refreshAfterTx]);
 
-  // ── Forfeit Commitment ──────────────────────────────────────────────────
+  // ── Forfeit Commitment ───
   const forfeitCommit = useCallback(async (
     planId: string
   ): Promise<CommitResult> => {
