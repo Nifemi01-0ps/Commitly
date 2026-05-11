@@ -150,6 +150,18 @@
   font-size: 15px;
   font-weight: 600;
 }
+.meterLabels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 6px;
+}
+.currentLevel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
 
 .scoreValue {
   font-size: 22px;
