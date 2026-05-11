@@ -1,58 +1,72 @@
+/* ── Card wrapper ─────────────────────────────────────────────────────────── */
 .card {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
+/* ── Header ───────────────────────────────────────────────────────────────── */
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 16px 20px;
-  border-bottom: 1px solid var(--border);
-  background: var(--card);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  transition: background 0.3s ease;
 }
 
-.realMode {
-  background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
+.header.realMode {
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
 }
 
 .headerContent {
   display: flex;
   align-items: center;
-  gap: 12px;
-  width: 100%;
+  gap: 10px;
 }
 
 .icon {
   width: 34px;
   height: 34px;
   border-radius: 10px;
+  background: #f4f4f5;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 17px;
-  background: #F4F4F5;
+  transition: background 0.3s ease;
 }
 
 .realMode .icon {
-  background: var(--brand);
+  background: #4f46e5;
 }
 
 .title {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
+  color: #1c1917;
 }
 
 .subtitle {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
-/* Badge Styles */
+.modeText {
+  font-size: 11px;
+  color: #78716c;
+}
+
+.realMode .modeText {
+  color: #4f46e5;
+}
+
+/* ── Network badge ────────────────────────────────────────────────────────── */
 .badge {
   font-size: 10px;
   font-weight: 700;
@@ -62,16 +76,22 @@
   letter-spacing: 0.05em;
 }
 
-.mockBadge { background: #F4F4F5; color: var(--muted); }
-.devnetBadge { background: #FEF3C7; color: #B45309; }
-.mainnetBadge { background: #DCFCE7; color: var(--green); }
-
-.modeText {
-  font-size: 11px;
-  color: var(--muted);
+.mockBadge {
+  background: #f4f4f5;
+  color: #78716c;
 }
 
-/* Content */
+.devnetBadge {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.mainnetBadge {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+/* ── Content area ─────────────────────────────────────────────────────────── */
 .content {
   padding: 16px 20px;
   display: flex;
@@ -79,20 +99,22 @@
   gap: 14px;
 }
 
+/* ── Section ──────────────────────────────────────────────────────────────── */
 .section {
-  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .label {
   font-size: 11px;
   font-weight: 600;
-  color: var(--muted);
+  color: #78716c;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 6px;
 }
 
-/* Address */
+/* ── Wallet address ───────────────────────────────────────────────────────── */
 .addressRow {
   display: flex;
   align-items: center;
@@ -102,11 +124,12 @@
 .address {
   flex: 1;
   padding: 10px 13px;
-  background: #F8F9FB;
+  background: #f8f9fb;
   border-radius: 10px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   font-family: monospace;
   font-size: 13px;
+  color: #1c1917;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -115,30 +138,36 @@
 .copyButton {
   padding: 10px 16px;
   border-radius: 10px;
-  background: var(--brand);
-  color: white;
+  background: #4f46e5;
+  color: #ffffff;
   border: none;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
+  font-family: "DM Sans", sans-serif;
   flex-shrink: 0;
+  min-width: 68px;
+  transition: background 0.2s ease;
 }
 
-/* Balance */
+.copyButton:hover {
+  background: #3730a3;
+}
+
+/* ── Balance section ──────────────────────────────────────────────────────── */
 .balanceHeader {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  justify-content: space-between;
 }
 
 .lastUpdated {
   font-size: 10px;
-  color: var(--muted);
+  color: #78716c;
 }
 
 .balanceDisplay {
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 
 .balanceAmount {
@@ -149,66 +178,109 @@
 }
 
 .solValue {
-  font-family: 'Bricolage Grotesque', sans-serif;
+  font-family: "Bricolage Grotesque", sans-serif;
   font-size: 26px;
   font-weight: 800;
+  color: #1c1917;
+  transition: opacity 0.2s ease;
 }
 
 .solLabel {
   font-size: 14px;
-  color: var(--muted);
+  color: #78716c;
   font-weight: 500;
 }
 
 .creditEquivalent {
   font-size: 12px;
-  color: var(--muted);
+  color: #78716c;
   padding: 2px 8px;
-  background: #F4F4F5;
+  background: #f4f4f5;
   border-radius: 20px;
 }
 
+.error {
+  font-size: 13px;
+  color: #dc2626;
+  padding: 4px 0;
+}
+
+/* ── Refresh button ───────────────────────────────────────────────────────── */
 .refreshButton {
   width: 100%;
   padding: 11px 16px;
   border-radius: 11px;
-  background: var(--card);
-  border: 1.5px solid var(--brand);
-  color: var(--brand);
+  background: #ffffff;
+  border: 1.5px solid #4f46e5;
+  color: #4f46e5;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: all 0.15s ease;
+}
+
+.refreshButton:hover:not(:disabled) {
+  background: #eef2ff;
 }
 
 .refreshButton:disabled {
-  background: #F4F4F5;
-  border-color: var(--border);
-  color: var(--muted);
+  background: #f4f4f5;
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #78716c;
   cursor: not-allowed;
 }
 
-/* Rate Box */
+/* ── Messages ─────────────────────────────────────────────────────────────── */
+.message {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 600;
+  animation: fadeUp 0.25s both;
+}
+
+.success {
+  background: #dcfce7;
+  color: #16a34a;
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.info {
+  background: #eef2ff;
+  color: #4f46e5;
+  border: 1px solid rgba(79, 70, 229, 0.15);
+}
+
+/* ── Conversion rate box ──────────────────────────────────────────────────── */
 .rateBox {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 9px 12px;
-  background: #F8F9FB;
+  background: #f8f9fb;
   border-radius: 10px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   font-size: 12px;
-  color: var(--muted);
+  color: #78716c;
+  flex-wrap: wrap;
 }
 
 .rateSmall {
   margin-left: auto;
   font-size: 12px;
+  color: #78716c;
 }
 
-/* Faucet */
+/* ── Faucet box ───────────────────────────────────────────────────────────── */
 .faucetBox {
   padding: 12px 14px;
-  background: var(--amber-soft);
+  background: #fef3c7;
   border: 1px solid rgba(217, 119, 6, 0.2);
   border-radius: 12px;
 }
@@ -216,13 +288,13 @@
 .faucetTitle {
   font-size: 13px;
   font-weight: 600;
-  color: var(--amber);
+  color: #d97706;
   margin-bottom: 4px;
 }
 
 .faucetDesc {
   font-size: 12px;
-  color: #92400E;
+  color: #92400e;
   line-height: 1.6;
   margin-bottom: 10px;
 }
@@ -230,30 +302,220 @@
 .faucetActions {
   display: flex;
   gap: 8px;
-}
-
-.faucetButton,
-.copyFaucetButton {
-  padding: 8px 16px;
-  border-radius: 9px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
+  flex-wrap: wrap;
 }
 
 .faucetButton {
-  background: var(--amber);
-  color: white;
+  padding: 8px 16px;
+  border-radius: 9px;
+  background: #d97706;
+  color: #ffffff;
   border: none;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: background 0.15s ease;
+}
+
+.faucetButton:hover {
+  background: #b45309;
 }
 
 .copyFaucetButton {
+  padding: 8px 14px;
+  border-radius: 9px;
   background: transparent;
-  border: 1px solid var(--amber);
-  color: var(--amber);
+  border: 1px solid #d97706;
+  color: #d97706;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.15s ease;
 }
 
-/* Skeleton */
+.copyFaucetButton:hover {
+  background: rgba(217, 119, 6, 0.08);
+}
+
+/* ── Converter toggle button ──────────────────────────────────────────────── */
+.convertToggleButton {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #eef2ff;
+  border: 1.5px solid rgba(79, 70, 229, 0.2);
+  color: #4f46e5;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.15s ease;
+}
+
+.convertToggleButton:hover {
+  background: #e0e7ff;
+}
+
+/* ── Converter box ────────────────────────────────────────────────────────── */
+.converterBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeUp 0.2s both;
+}
+
+.converterTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1c1917;
+}
+
+.converterInputRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: #ffffff;
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.15s ease;
+}
+
+.converterInputRow:focus-within {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.solInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Bricolage Grotesque", sans-serif;
+  color: #1c1917;
+  background: transparent;
+  min-width: 0;
+}
+
+.solInput.solInputError {
+  color: #dc2626;
+}
+
+/* Remove number input arrows */
+.solInput::-webkit-outer-spin-button,
+.solInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.solInputLabel {
+  font-size: 13px;
+  color: #78716c;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.maxButton {
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #eef2ff;
+  border: none;
+  color: #4f46e5;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}
+
+.maxButton:hover {
+  background: #e0e7ff;
+}
+
+/* ── Convert preview ──────────────────────────────────────────────────────── */
+.convertPreview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  background: #dcfce7;
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  border-radius: 10px;
+  font-size: 13px;
+  color: #16a34a;
+  font-weight: 500;
+  animation: fadeIn 0.2s both;
+}
+
+.convertError {
+  font-size: 12px;
+  color: #dc2626;
+  padding: 2px 0;
+}
+
+/* ── Converter action buttons ─────────────────────────────────────────────── */
+.converterActions {
+  display: flex;
+  gap: 8px;
+}
+
+.convertButton {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 11px;
+  background: #4f46e5;
+  color: #ffffff;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: background 0.2s ease;
+}
+
+.convertButton:hover:not(:disabled) {
+  background: #3730a3;
+}
+
+.convertButton.convertButtonDisabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.cancelButton {
+  padding: 12px 16px;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #78716c;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: background 0.15s ease;
+}
+
+.cancelButton:hover {
+  background: #f4f4f5;
+}
+
+/* ── Error message (in converter) ─────────────────────────────────────────── */
+.errorMsg {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+/* ── Skeleton loader ──────────────────────────────────────────────────────── */
 .skeleton {
   width: 120px;
   height: 32px;
@@ -263,36 +525,33 @@
   animation: shimmer 1.4s ease-in-out infinite;
 }
 
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-/* Messages */
-.message {
-  margin-top: 8px;
-  padding: 8px 12px;
-  border-radius: 9px;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.success {
-  background: var(--green-soft);
-  color: var(--green);
-  border: 1px solid rgba(22, 163, 74, 0.2);
-}
-
-.info {
-  background: var(--brand-soft);
-  color: var(--brand);
-}
-
-/* Security Note */
+/* ── Security note ────────────────────────────────────────────────────────── */
 .securityNote {
   font-size: 11px;
-  color: var(--muted);
+  color: #78716c;
   line-height: 1.6;
   padding-top: 8px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ── Animations ───────────────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
