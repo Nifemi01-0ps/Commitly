@@ -1,27 +1,4 @@
-.fullWrapper {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.label {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-/* Confidence Pill (used in full variant) */
-.confidencePill {
-  font-size: 11px;
-  font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 20px;
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  white-space: nowrap;
-}
-
-/* Compact Badge */
+/* Compact Badge (default) */
 .compactBadge {
   font-size: 11px;
   font-weight: 600;
@@ -33,9 +10,36 @@
   white-space: nowrap;
 }
 
-/* Hover effect for better UX */
-.compactBadge:hover,
-.confidencePill:hover {
-  filter: brightness(1.08);
-  transition: filter 0.2s ease;
+/* Full Variant */
+.fullContainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.confidencePill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+/* Fallback */
+.fallback {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: #F1F5F9;
+  color: #64748B;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
