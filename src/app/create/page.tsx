@@ -8,7 +8,7 @@ import { useUserStore } from "../../store/useUserStore";
 import { useActivityStore } from "../../store/useActivityStore";
 import { useNotifStore } from "../../store/useNotifStore";
 import { minDeadline } from "../../lib/utils";
-import styles from "./CreatePage.module.css";
+import styles from "../../styles/CreatePage.module.css";
 
 const CREDIT_PRESETS = [5, 10, 20, 50];
 
