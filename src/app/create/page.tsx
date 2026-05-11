@@ -12,7 +12,7 @@ import styles from "../../styles/CreatePage.module.css";
 
 const CREDIT_PRESETS = [5, 10, 20, 50];
 
-// ─── Smart deadline presets ────────────────────────────────────────────────────
+// ─── Smart deadline presets ───
 function getDeadlinePresets() {
   const now = new Date();
   const eod = new Date(); eod.setHours(23, 59, 0, 0);
