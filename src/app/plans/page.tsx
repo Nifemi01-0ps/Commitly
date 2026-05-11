@@ -8,7 +8,7 @@ import { Button, EmptyState } from "../../components/ui";
 import BottomNav from "../../components/BottomNav";
 import RealModeToggle from "../../components/RealModeToggle";
 import BlockchainSettings from "../../components/BlockchainSetting";
-import styles from "../../styles/stylesProfilePage.module.css";
+import styles from "../../styles/ProfilePage.module.css";
 
 function timeAgo(iso: string): string {
   const diff = Date.now() - new Date(iso).getTime();
