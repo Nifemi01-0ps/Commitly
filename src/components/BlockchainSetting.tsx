@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useUserStore } from "../store/useUserStore";
 import { useWalletBalance } from "../hooks/useWalletBalance";
 import { getSolanaMode } from "../services/solanaService";
-import styles from "./BlockchainSettings.module.css";
+import styles from "./BlockchainSetting.module.css";
 
 const FAUCET_URL = "https://faucet.solana.com";
 
@@ -30,7 +30,8 @@ export default function BlockchainSettings() {
 
   if (!user) return null;
 
-  const { initialLoading, isRefreshing, solBalance, error, lastUpdated } = walletInfo;
+  const { initialLoading, isRefreshing, solBalance, error, lastUpdated } =
+    walletInfo;
   const isBusy = initialLoading || isRefreshing;
 
   const maxSol = solBalance ?? 0;
@@ -71,9 +72,7 @@ export default function BlockchainSettings() {
       {/* Header */}
       <div className={`${styles.header} ${realMode ? styles.realMode : ""}`}>
         <div className={styles.headerContent}>
-          <div className={styles.icon}>
-            {realMode ? "⚡" : "🔗"}
-          </div>
+          <div className={styles.icon}>{realMode ? "⚡" : "🔗"}</div>
           <div>
             <div className={styles.title}>Blockchain Settings</div>
             <div className={styles.subtitle}>
@@ -103,7 +102,9 @@ export default function BlockchainSettings() {
           <div className={styles.balanceHeader}>
             <div className={styles.label}>Balance</div>
             {lastUpdatedLabel && !isBusy && (
-              <div className={styles.lastUpdated}>Updated {lastUpdatedLabel}</div>
+              <div className={styles.lastUpdated}>
+                Updated {lastUpdatedLabel}
+              </div>
             )}
           </div>
 
@@ -140,7 +141,13 @@ export default function BlockchainSettings() {
           </button>
 
           {refreshMsg && (
-            <div className={`${styles.message} ${refreshMsg.includes("SOL received") ? styles.success : styles.info}`}>
+            <div
+              className={`${styles.message} ${
+                refreshMsg.includes("SOL received")
+                  ? styles.success
+                  : styles.info
+              }`}
+            >
               {refreshMsg}
             </div>
           )}
@@ -158,13 +165,17 @@ export default function BlockchainSettings() {
         <div className={styles.faucetBox}>
           <div className={styles.faucetTitle}>Need SOL for testing?</div>
           <div className={styles.faucetDesc}>
-            Get free devnet SOL from the faucet. Copy your address and we&apos;ll detect when it arrives.
+            Get free devnet SOL from the faucet. Copy your address and
+            we&apos;ll detect when it arrives.
           </div>
           <div className={styles.faucetActions}>
             <a href={FAUCET_URL} target="_blank" rel="noopener noreferrer">
               <button className={styles.faucetButton}>Open Faucet ↗</button>
             </a>
-            <button onClick={handleCopyAndPoll} className={styles.copyFaucetButton}>
+            <button
+              onClick={handleCopyAndPoll}
+              className={styles.copyFaucetButton}
+            >
               {copied ? "✓ Address copied — watching" : "Copy address"}
             </button>
           </div>
@@ -192,34 +203,145 @@ export default function BlockchainSettings() {
         )}
 
         <div className={styles.securityNote}>
-          🔒 Your wallet key is stored securely on this device and is never shared with Commitly servers.
+          🔒 Your wallet key is stored securely on this device and is never
+          shared with Commitly servers.
         </div>
       </div>
     </div>
   );
 }
 
-/* Small Sub Components */
+/* ── Sub-components ─────────────────────────────────────────────────────────── */
+
 function NetworkBadge({ solanaMode }: { solanaMode: string }) {
-  const labels = {
+  const labels: Record<string, string> = {
     mock: "Mock",
     devnet: "Devnet",
-    mainnet: "Mainnet",
+    "mainnet-beta": "Mainnet",
   };
 
-  const classes = {
+  const classes: Record<string, string> = {
     mock: styles.mockBadge,
     devnet: styles.devnetBadge,
-    mainnet: styles.mainnetBadge,
+    "mainnet-beta": styles.mainnetBadge,
   };
 
   return (
-    <span className={`${styles.badge} ${classes[solanaMode as keyof typeof classes] || styles.mainnetBadge}`}>
-      {labels[solanaMode as keyof typeof labels] || "Mainnet"}
+    <span
+      className={`${styles.badge} ${
+        classes[solanaMode] || styles.mainnetBadge
+      }`}
+    >
+      {labels[solanaMode] || "Mainnet"}
     </span>
   );
 }
 
 function BalanceSkeleton() {
   return <div className={styles.skeleton} />;
+}
+
+function Converter({
+  showConvert,
+  setShowConvert,
+  convertInput,
+  setConvertInput,
+  maxSol,
+  convertAmt,
+  wouldGet,
+  canConvert,
+  converting,
+  convertMsg,
+  onConvert,
+  onCancel,
+}: {
+  showConvert: boolean;
+  setShowConvert: (v: boolean) => void;
+  convertInput: string;
+  setConvertInput: (v: string) => void;
+  maxSol: number;
+  convertAmt: number;
+  wouldGet: number;
+  canConvert: boolean;
+  converting: boolean;
+  convertMsg: string | null;
+  onConvert: () => void;
+  onCancel: () => void;
+}) {
+  if (!showConvert) {
+    return (
+      <button
+        onClick={() => setShowConvert(true)}
+        className={styles.convertToggleButton}
+      >
+        ⬡ Convert SOL to Credits
+      </button>
+    );
+  }
+
+  return (
+    <div className={styles.converterBox}>
+      <div className={styles.converterTitle}>Convert SOL → Credits</div>
+
+      <div className={styles.converterInputRow}>
+        <input
+          type="number"
+          step="0.001"
+          min="0"
+          max={maxSol}
+          placeholder="0.000"
+          value={convertInput}
+          onChange={(e) => setConvertInput(e.target.value)}
+          className={`${styles.solInput} ${
+            convertAmt > maxSol ? styles.solInputError : ""
+          }`}
+        />
+        <span className={styles.solInputLabel}>SOL</span>
+        <button
+          onClick={() => setConvertInput(maxSol.toFixed(4))}
+          className={styles.maxButton}
+        >
+          MAX
+        </button>
+      </div>
+
+      {convertAmt > 0 && convertAmt <= maxSol && (
+        <div className={styles.convertPreview}>
+          ⬡ You&apos;ll receive{" "}
+          <strong>{wouldGet.toLocaleString()} credits</strong>
+        </div>
+      )}
+
+      {convertAmt > maxSol && (
+        <div className={styles.convertError}>
+          Max available: {maxSol.toFixed(4)} SOL
+        </div>
+      )}
+
+      <div className={styles.converterActions}>
+        <button
+          onClick={onConvert}
+          disabled={!canConvert || converting}
+          className={`${styles.convertButton} ${
+            !canConvert || converting ? styles.convertButtonDisabled : ""
+          }`}
+        >
+          {converting ? "Converting…" : "Convert"}
+        </button>
+        <button onClick={onCancel} className={styles.cancelButton}>
+          Cancel
+        </button>
+      </div>
+
+      {convertMsg && (
+        <div
+          className={`${styles.message} ${
+            convertMsg.startsWith("+") ? styles.success : styles.errorMsg
+          }`}
+        >
+          {convertMsg}
+        </div>
+      )}
+    </div>
+  );
 }
