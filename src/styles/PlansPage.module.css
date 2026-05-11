@@ -1,0 +1,68 @@
+.container {
+  padding-bottom: 90px;
+}
+
+.filters {
+  padding: 12px 20px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filterButton {
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+
+.filterButton.active {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+}
+
+.badge {
+  font-size: 11px;
+  background: var(--border);
+  color: var(--muted);
+  padding: 1px 6px;
+  border-radius: 10px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.filterButton.active .badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.content {
+  padding: 4px 20px 0;
+}
+
+.emptyWrapper {
+  margin-top: 20px;
+}
+
+.planList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
